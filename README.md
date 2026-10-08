@@ -418,7 +418,7 @@ mild.png
 
 #### No DR — Accuracy Result
 
-no_dr_accracy.png
+no_dr_accuracy.png
 
 #### Mild — Accuracy Result
 
