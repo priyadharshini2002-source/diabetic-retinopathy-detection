@@ -388,26 +388,51 @@ Live Web Application
 ---
 
 ## 📸 Screenshots
-
-Add screenshots of your deployed application here if desired.
-
-For example:
-
-```markdown
 ## 📸 Screenshots
 
-### Main Application
+### 🏠 About the Project
 
-![Diabetic Retinopathy Detection](screenshots/home.png)
-
-### Prediction Result
-
-![Prediction Result](screenshots/prediction.png)
-```
-
-> Screenshots are optional. They can be added later to make the GitHub repository more visually attractive.
+about_project.png
 
 ---
+
+### 🩺 Diabetic Retinopathy Predictions
+
+#### Moderate Diabetic Retinopathy
+
+DR_moderate.png
+
+#### Severe Diabetic Retinopathy
+
+![Severe Diabetic Retinopathy](DR_severe.png)
+
+#### No Diabetic Retinopathy
+
+no_dr.png
+
+#### Mild Diabetic Retinopathy
+
+mild.png
+
+---
+
+### 📊 Prediction Accuracy / Results
+
+#### No DR — Accuracy Result
+
+no_dr_accracy.png
+
+#### Mild — Accuracy Result
+
+mild.png
+
+#### Moderate — Accuracy Result
+
+moderate_accuracy.png
+
+#### Severe — Accuracy Result 
+DR_severe_accuracy.png
+
 
 ## ⚠️ Medical Disclaimer
 
