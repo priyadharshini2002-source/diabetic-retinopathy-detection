@@ -1,35 +1,36 @@
 # 🩺 Diabetic Retinopathy Detection Using CNN
 
-A deep learning-based web application for detecting **Diabetic Retinopathy (DR)** from retinal fundus images using a **Convolutional Neural Network (CNN)**.
+A deep learning-based web application for detecting and classifying **Diabetic Retinopathy (DR)** from retinal fundus images using a **Convolutional Neural Network (CNN)**.
 
-The model classifies retinal images into four categories:
+The application classifies retinal images into four categories:
 
-- 🟢 **No DR**
-- 🟡 **Mild**
-- 🟠 **Moderate**
-- 🔴 **Severe**
+- **Mild**
+- **Moderate**
+- **No Diabetic Retinopathy (No_DR)**
+- **Severe**
 
-The trained model is integrated with a **Streamlit web application**, allowing users to upload a retinal image and receive a predicted DR category along with the confidence score and class probabilities.
+The trained CNN model is integrated with a **Streamlit web application**, allowing users to upload a retinal image and receive a predicted class along with its confidence and class probabilities.
 
 ---
 
 ## 🚀 Live Demo
 
-**Diabetic Retinopathy Detection Web Application**
+The trained model is deployed as an interactive Streamlit application.
 
- Deployed Streamlit link here:
-
-
+**Live Demo:**  
 https://diabetic-retinopathy-detection-3fuaks8jzfpzirqtxgd35w.streamlit.app/
+
 ---
 
 ## 📌 Project Overview
 
-Diabetic Retinopathy is an eye condition associated with diabetes that can affect the blood vessels of the retina and may lead to vision impairment.
+Diabetic Retinopathy is an eye condition associated with diabetes that can damage the blood vessels of the retina and may lead to vision impairment.
 
-This project demonstrates how **Deep Learning and Computer Vision** can be used to analyze retinal images and classify them according to the severity of diabetic retinopathy.
+This project demonstrates the application of **Deep Learning and Computer Vision** for retinal image classification.
 
-The system uses a CNN trained on retinal fundus images and provides an easy-to-use Streamlit interface for image-based prediction.
+A Convolutional Neural Network is trained to identify the severity category of diabetic retinopathy from retinal fundus images.
+
+The trained model is then integrated into a Streamlit application to provide an interactive image-based prediction system.
 
 ---
 
@@ -37,158 +38,161 @@ The system uses a CNN trained on retinal fundus images and provides an easy-to-u
 
 The main objectives of this project are:
 
-- To develop a CNN-based image classification model for diabetic retinopathy.
-- To classify retinal images into four severity categories.
-- To process retinal images automatically using deep learning.
-- To provide prediction confidence and class probabilities.
-- To build an interactive web interface using Streamlit.
-- To demonstrate the practical application of deep learning in healthcare image analysis.
+- Develop a CNN-based image classification model.
+- Classify retinal fundus images into four DR categories.
+- Process retinal images using deep learning techniques.
+- Generate prediction confidence and class probabilities.
+- Build an interactive web application using Streamlit.
+- Demonstrate the application of AI in healthcare image analysis.
 
 ---
 
 ## 🧠 Classification Classes
 
-The model predicts one of the following four classes:
-
 | Class | Description |
 |---|---|
-| **No_DR** | No visible diabetic retinopathy |
-| **Mild** | Mild stage diabetic retinopathy |
-| **Moderate** | Moderate stage diabetic retinopathy |
-| **Severe** | Severe stage diabetic retinopathy |
+| **Mild** | Mild stage of diabetic retinopathy |
+| **Moderate** | Moderate stage of diabetic retinopathy |
+| **No_DR** | No diabetic retinopathy detected |
+| **Severe** | Severe stage of diabetic retinopathy |
 
 ---
 
-## 🏗️ Model Architecture
+## 🏗️ CNN Model Architecture
 
-The project uses a **Convolutional Neural Network (CNN)** architecture.
+The project uses a **Convolutional Neural Network (CNN)** for image classification.
 
-### CNN Architecture
+### Architecture
 
 ```text
-Input Image
-    │
-    ▼
-128 × 128 × 3
-    │
-    ▼
+Input Retinal Image
+        │
+        ▼
+   128 × 128 × 3
+        │
+        ▼
 Conv2D – 32 Filters
-    │
-    ▼
-MaxPooling
-    │
-    ▼
+        │
+        ▼
+ MaxPooling2D
+        │
+        ▼
 Batch Normalization
-    │
-    ▼
+        │
+        ▼
 Conv2D – 64 Filters
-    │
-    ▼
-MaxPooling
-    │
-    ▼
+        │
+        ▼
+ MaxPooling2D
+        │
+        ▼
 Batch Normalization
-    │
-    ▼
+        │
+        ▼
 Conv2D – 64 Filters
-    │
-    ▼
-MaxPooling
-    │
-    ▼
+        │
+        ▼
+ MaxPooling2D
+        │
+        ▼
 Batch Normalization
-    │
-    ▼
+        │
+        ▼
 Conv2D – 96 Filters
-    │
-    ▼
-MaxPooling
-    │
-    ▼
+        │
+        ▼
+ MaxPooling2D
+        │
+        ▼
 Batch Normalization
-    │
-    ▼
+        │
+        ▼
 Conv2D – 32 Filters
-    │
-    ▼
-MaxPooling
-    │
-    ▼
+        │
+        ▼
+ MaxPooling2D
+        │
+        ▼
 Batch Normalization
-    │
-    ▼
-Dropout
-    │
-    ▼
-Flatten
-    │
-    ▼
+        │
+        ▼
+     Dropout
+        │
+        ▼
+      Flatten
+        │
+        ▼
 Dense – 128 Neurons
-    │
-    ▼
-Dropout
-    │
-    ▼
+        │
+        ▼
+     Dropout
+        │
+        ▼
 Dense – 4 Neurons
-    │
-    ▼
-Softmax
-    │
-    ▼
+        │
+        ▼
+     Softmax
+        │
+        ▼
 DR Classification
 ```
 
 ### Model Configuration
 
-- **Input Size:** 128 × 128 × 3
-- **Model Type:** Convolutional Neural Network
-- **Activation:** ReLU
-- **Output Activation:** Softmax
-- **Optimizer:** Adam
-- **Loss Function:** Categorical Cross-Entropy
-- **Output Classes:** 4
-- **Dropout:** 0.2 and 0.3
-- **Training Epochs:** 100
-- **Batch Size:** 8
+| Parameter | Value |
+|---|---|
+| Model | Convolutional Neural Network |
+| Input Size | 128 × 128 × 3 |
+| Output Classes | 4 |
+| Hidden Activation | ReLU |
+| Output Activation | Softmax |
+| Optimizer | Adam |
+| Loss Function | Categorical Cross-Entropy |
+| Batch Size | 8 |
+| Training Epochs | 100 |
+| Dropout | 0.2 and 0.3 |
 
 ---
 
-## 🔄 How the System Works
+## 🔄 System Workflow
 
 ```text
-User Uploads Retinal Image
-            │
-            ▼
-     Image Preprocessing
-            │
-            ▼
-     Resize to 128 × 128
-            │
-            ▼
-      CNN Model Prediction
-            │
-            ▼
+        Retinal Fundus Image
+                 │
+                 ▼
+          Image Upload
+                 │
+                 ▼
+        Image Preprocessing
+                 │
+                 ▼
+         Resize to 128×128
+                 │
+                 ▼
+          CNN Prediction
+                 │
+                 ▼
        Softmax Probabilities
-            │
-            ▼
-    ┌─────────────────────┐
-    │ Predicted DR Class  │
-    │ Confidence Score    │
-    │ Class Probabilities │
-    └─────────────────────┘
+                 │
+          ┌──────┴──────┐
+          ▼             ▼
+   Predicted Class   Confidence
+          │
+          ▼
+    Class Probabilities
 ```
 
 ---
 
-## ✨ Features
+## ✨ Key Features
 
-### 🖼️ Image Upload
+### 🖼️ Retinal Image Upload
 
 Users can upload a retinal fundus image through the Streamlit interface.
 
-### 🤖 CNN-Based Prediction
+### 🤖 CNN-Based Classification
 
-The uploaded image is processed by the trained CNN model.
+The uploaded image is processed by the trained CNN model to determine the DR category.
 
 ### 📊 Confidence Score
 
@@ -196,15 +200,51 @@ The application displays the confidence associated with the predicted class.
 
 ### 📈 Class Probabilities
 
-The application provides probability values for all four DR categories.
+Probability values for the four DR classes are displayed to provide additional prediction information.
 
-### 🌐 Interactive Web Interface
+### 🌐 Interactive Web Application
 
-The model is deployed through Streamlit, making the prediction system accessible through a web browser.
+The model is deployed using Streamlit, making the system accessible through a web browser.
 
-### 🔍 Multiple Image Formats
+### 🖥️ User-Friendly Interface
 
-The application can process common image formats supported by PIL.
+The application provides a simple interface for uploading an image and viewing the prediction.
+
+---
+
+## 📸 Application Screenshots
+
+### 🏠 About the Project
+
+![About the Project](about_project.png)
+
+### 🩺 Moderate Diabetic Retinopathy Prediction
+
+![Moderate Diabetic Retinopathy](DR_moderate.png)
+
+### 🩺 Severe Diabetic Retinopathy Prediction
+
+![Severe Diabetic Retinopathy](DR_severe.png)
+
+### 🩺 No Diabetic Retinopathy Prediction
+
+![No Diabetic Retinopathy](no_dr.png)
+
+### 📊 No DR Result
+
+![No DR Result](no_dr_accracy.png)
+
+### 📊 Mild DR Result
+
+![Mild DR Result](mild.png)
+
+### 📊 Moderate DR Result
+
+![Moderate DR Result](moderate_accuracy.png)
+
+### 📊 Severe DR Result
+
+![Severe DR Result](DR_severe_accuracy.png)
 
 ---
 
@@ -212,20 +252,22 @@ The application can process common image formats supported by PIL.
 
 | Technology | Purpose |
 |---|---|
-| **Python** | Programming language |
-| **TensorFlow / Keras** | Deep learning model |
-| **CNN** | Retinal image classification |
+| **Python** | Programming |
+| **TensorFlow** | Deep Learning |
+| **Keras** | CNN model development |
 | **NumPy** | Numerical computation |
-| **Pillow (PIL)** | Image processing |
+| **Pillow** | Image processing |
 | **Streamlit** | Web application |
-| **Git & GitHub** | Version control and project hosting |
+| **Git** | Version control |
+| **GitHub** | Repository hosting |
+| **Streamlit Community Cloud** | Deployment |
 
 ---
 
 ## 📂 Project Structure
 
 ```text
-DIABETIC_RETINOPATHY/
+diabetic-retinopathy-detection/
 │
 ├── data/
 │   ├── train/
@@ -252,7 +294,16 @@ DIABETIC_RETINOPATHY/
 ├── model1.h5
 ├── model1.json
 ├── requirements.txt
-└── README.md
+├── README.md
+│
+├── about_project.png
+├── DR_moderate.png
+├── DR_severe.png
+├── no_dr.png
+├── no_dr_accracy.png
+├── mild.png
+├── moderate_accuracy.png
+└── DR_severe_accuracy.png
 ```
 
 ---
@@ -279,21 +330,9 @@ pip install -r requirements.txt
 
 ---
 
-## ▶️ Run the Application Locally
+## 📦 Requirements
 
-Start the Streamlit application using:
-
-```bash
-streamlit run app.py
-```
-
-The application will open in your browser.
-
----
-
-## 📋 Requirements
-
-The project uses the following Python packages:
+The application requires:
 
 ```text
 streamlit
@@ -302,52 +341,71 @@ numpy
 pillow
 ```
 
+These dependencies are also included in `requirements.txt`.
+
 ---
 
-## 🔬 Model Prediction Process
+## ▶️ Run the Application
 
-The prediction pipeline follows these steps:
+Run the following command from the project directory:
 
-### Step 1 — Upload Image
+```bash
+streamlit run app.py
+```
+
+The Streamlit application will open in your default web browser.
+
+---
+
+## 🔬 Prediction Process
+
+The application follows the following pipeline:
+
+### Step 1 — Upload
 
 The user uploads a retinal fundus image.
 
-### Step 2 — Image Preprocessing
+### Step 2 — Preprocessing
 
-The uploaded image is:
+The image is:
 
-- Loaded using PIL
-- Converted into RGB format when necessary
-- Resized to **128 × 128 pixels**
-- Converted into a NumPy array
+- Loaded using Pillow.
+- Converted to RGB when required.
+- Resized to **128 × 128 pixels**.
+- Converted into a NumPy array.
 
 ### Step 3 — CNN Prediction
 
 The processed image is passed to the trained CNN model.
 
-### Step 4 — Class Selection
+### Step 4 — Classification
 
-The model produces probabilities for the four classes.
+The CNN produces probabilities for the four classes:
 
-The class with the highest probability is selected as the predicted category.
+```text
+Mild
+Moderate
+No_DR
+Severe
+```
 
-### Step 5 — Display Results
+The class with the highest predicted probability is selected.
+
+### Step 5 — Result
 
 The application displays:
 
 ```text
 Predicted Class
-      +
 Confidence Score
-      +
 Class Probabilities
 ```
 
 ---
 
-## 📊 Output Example
+## 📊 Example Output
 
-Example prediction output:
+An example prediction may look like:
 
 ```text
 Predicted Condition: Moderate
@@ -362,7 +420,7 @@ No_DR      : 3.14%
 Severe     : 2.10%
 ```
 
-*The values above are only an example. Actual predictions depend on the uploaded retinal image.*
+> The values above are only an example. Actual predictions depend on the uploaded image.
 
 ---
 
@@ -370,149 +428,101 @@ Severe     : 2.10%
 
 The application is deployed using **Streamlit Community Cloud**.
 
-The deployment workflow is:
+### Deployment Workflow
 
 ```text
-Local Project
-     │
-     ▼
-   GitHub
-     │
-     ▼
+Local Development
+       │
+       ▼
+     Git
+       │
+       ▼
+    GitHub
+       │
+       ▼
 Streamlit Community Cloud
-     │
-     ▼
-Live Web Application
+       │
+       ▼
+ Live Web Application
 ```
 
 ---
-## 📸 Screenshots
 
-### 🏠 About the Project
+## ⚠️ Limitations
 
-about_project.png
+The current implementation has several limitations:
 
----
-
-### 🩺 Diabetic Retinopathy Predictions
-
-#### Moderate Diabetic Retinopathy
-
-DR_moderate.png
-
-#### Severe Diabetic Retinopathy
-
-![Severe Diabetic Retinopathy](DR_severe.png)
-
-#### No Diabetic Retinopathy
-
-no_dr.png
-
-#### Mild Diabetic Retinopathy
-
-mild.png
-
----
-
-### 📊 Prediction Accuracy / Results
-
-#### No DR — Accuracy Result
-
-no_dr_accuracy.png
-
-#### Mild — Accuracy Result
-
-mild.png
-
-#### Moderate — Accuracy Result
-
-moderate_accuracy.png
-
-#### Severe — Accuracy Result 
-DR_severe_accuracy.png
-
-
-## ⚠️ Medical Disclaimer
-
-This project is developed for **educational, research, and demonstration purposes only**.
-
-The predictions generated by this application should **not be considered a medical diagnosis**.
-
-The application is not intended to replace:
-
-- Ophthalmologists
-- Medical professionals
-- Clinical examination
-- Professional diagnostic equipment
-
-Users should consult a qualified healthcare professional for medical diagnosis and treatment decisions.
-
----
-
-## ⚠️ Project Limitations
-
-Some limitations of the current implementation include:
-
-- Model performance depends on the quality of retinal images.
-- Predictions may not be reliable for images significantly different from the training data.
-- The model is intended as an educational demonstration rather than a clinical diagnostic system.
-- Dataset characteristics can affect model generalization.
-- Further validation on diverse clinical datasets would be required before real-world medical use.
+- Prediction quality depends on retinal image quality.
+- Model performance may vary for images that differ from the training data.
+- The system has been developed primarily as an educational and research project.
+- Further validation using diverse clinical datasets would be required for real-world clinical application.
+- The model should not be considered a replacement for professional medical examination.
 
 ---
 
 ## 🔮 Future Enhancements
 
-Possible future improvements include:
+Potential improvements include:
 
-- 📈 Improving model accuracy using transfer learning.
-- 🧠 Experimenting with architectures such as ResNet, EfficientNet, and DenseNet.
-- 🔍 Adding explainable AI techniques such as Grad-CAM.
-- 🖼️ Improving retinal image preprocessing.
-- 📊 Adding detailed performance dashboards.
-- 📱 Developing a mobile-friendly version.
-- ☁️ Improving cloud deployment and scalability.
-- 🩺 Integrating expert-reviewed clinical datasets.
-- 🔬 Performing additional validation using external datasets.
+- Implementing transfer learning using **ResNet, EfficientNet, or DenseNet**.
+- Applying **Grad-CAM** for visual model explainability.
+- Improving retinal image preprocessing.
+- Using larger and more diverse datasets.
+- Performing extensive external validation.
+- Adding model performance dashboards.
+- Developing a mobile-friendly application.
+- Improving deployment scalability.
+- Incorporating expert-reviewed clinical data.
 
 ---
 
-## 💡 Learning Outcomes
+## 📚 Learning Outcomes
 
-Through this project, the following concepts were explored:
+This project provided practical experience in:
 
 - Convolutional Neural Networks
+- Deep Learning
+- Computer Vision
 - Image Classification
 - Image Preprocessing
 - Data Augmentation
 - Batch Normalization
 - Dropout
 - Softmax Classification
+- TensorFlow/Keras
 - Model Training
 - Model Prediction
-- TensorFlow/Keras
-- Streamlit Deployment
-- GitHub Version Control
+- Streamlit Development
+- Git and GitHub
+- Cloud Deployment
 - Healthcare AI
+
+---
+
+## ⚠️ Medical Disclaimer
+
+This project is intended **only for educational and research purposes**.
+
+The predictions generated by this application **must not be considered a medical diagnosis** and should not be used to make medical decisions.
+
+A qualified healthcare professional or ophthalmologist should be consulted for proper examination, diagnosis, and treatment.
 
 ---
 
 ## 👩‍💻 Author
 
-**S. Priyadharshini**
+### S. Priyadharshini
 
-MSc Data Science
+**MSc Data Science**
 
-GitHub: `priyadharshini2002-source`
+GitHub: **priyadharshini2002-source**
 
 ---
 
 ## ⭐ Project
 
-If you find this project useful for learning about **Deep Learning, Computer Vision, and Healthcare AI**, consider giving the repository a ⭐.
+If you found this project useful for learning about **Deep Learning, Computer Vision, and Healthcare AI**, consider giving the repository a ⭐.
 
 ---
 
-### 📌 Disclaimer
-
-This project is intended solely for educational and research purposes and should not be used for medical diagnosis or clinical decision-making.
+**Built with Python, TensorFlow, Keras, and Streamlit.**
