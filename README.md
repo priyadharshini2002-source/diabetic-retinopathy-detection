@@ -18,9 +18,7 @@ The trained model is integrated with a **Streamlit web application**, allowing u
 **Diabetic Retinopathy Detection Web Application**
 
 Paste your deployed Streamlit link here:
-
-`https://diabetic-retinopathy-detection-3fuaks8jzfpzirqtxgd35w.streamlit.app/`
-
+https://diabetic-retinopathy-detection-3fuaks8jzfpzirqtxgd35w.streamlit.app/
 ---
 
 ## 📌 Project Overview
