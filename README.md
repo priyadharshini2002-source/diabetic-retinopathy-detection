@@ -386,8 +386,6 @@ Live Web Application
 ```
 
 ---
-
-## 📸 Screenshots
 ## 📸 Screenshots
 
 ### 🏠 About the Project
